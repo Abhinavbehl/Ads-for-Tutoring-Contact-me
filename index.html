@@ -1,0 +1,252 @@
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    // Customizing Tailwind to use a modern font (Inter is assumed) and setting primary colors
+    tailwind.config = {
+        theme: {
+            extend: {
+                fontFamily: {
+                    sans: ['Inter', 'sans-serif'],
+                },
+                colors: {
+                    // Professional and energetic colors
+                    'gemini-blue': '#1D4ED8',
+                    'gemini-cyan': '#06B6D4',
+                    'gemini-red': '#DC3545',
+                }
+            }
+        }
+    }
+</script>
+<style>
+    /* Ensures the font is loaded and provides a slight visual gradient effect for the text */
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: #F3F4F6; /* Light gray background for contrast */
+    }
+    .gradient-text {
+        /* Creates a gradient effect on the text itself */
+        background-image: linear-gradient(45deg, #1D4ED8, #06B6D4);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+    }
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Ad Container: Centered and responsive -->
+<div class="min-h-screen flex items-center justify-center p-4">
+
+    <!-- The Ad Card -->
+    <div id="ad-card" class="bg-white max-w-lg w-full rounded-3xl shadow-2xl overflow-hidden transform transition-all duration-500 hover:shadow-3xl border-t-8 border-gemini-cyan">
+        
+        <!-- Header Section: Main Headline -->
+        <div class="p-8 text-center bg-gray-50 border-b border-gray-100">
+            <h1 class="text-4xl md:text-5xl font-extrabold gradient-text leading-tight">
+                🚀 Stop Stressing About Grades!
+            </h1>
+            <p class="mt-2 text-lg text-gray-600 font-medium">
+                Expert Tutoring That Drives **Real High School Success**.
+            </p>
+        </div>
+
+        <!-- Benefits & Features Section -->
+        <div class="p-8 space-y-6">
+            <h2 class="text-2xl font-bold text-gemini-blue text-center mb-6">
+                Turn Confusion Into Clarity
+            </h2>
+            
+            <div class="space-y-4">
+                <!-- Benefit 1: Confidence -->
+                <div class="flex items-start p-4 bg-blue-50 rounded-xl shadow-sm hover:shadow-md transition duration-200">
+                    <span class="text-2xl mr-4 text-gemini-cyan">✅</span>
+                    <div>
+                        <strong class="text-gray-900">Boost Confidence & Grades:</strong> Master complex subjects like **Calculus, trignometry, Quadratic equations, Factorization etc**..
+                    </div>
+                </div>
+
+                <!-- Benefit 2: Strategy -->
+                <div class="flex items-start p-4 bg-blue-50 rounded-xl shadow-sm hover:shadow-md transition duration-200">
+                    <span class="text-2xl mr-4 text-gemini-cyan">🧠</span>
+                    <div>
+                        <strong class="text-gray-900">Smarter Study Habits:</strong> Learn proven strategies for test-taking and time management that last long after high school.
+                    </div>
+                </div>
+
+                <!-- Benefit 3: Exam Prep -->
+                <div class="flex items-start p-4 bg-blue-50 rounded-xl shadow-sm hover:shadow-md transition duration-200">
+                    <span class="text-2xl mr-4 text-gemini-cyan">🏆</span>
+                    <div>
+                        <strong class="text-gray-900">Exam Domination:</strong> Intensive prep for **SAT, ACT, AP Exams, and Final Exams** to secure your college spot.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action Footer -->
+        <div class="p-8 pt-0">
+            <p class="text-sm text-gray-500 mb-4 text-center">
+                Specializing in Grades 9-12. Contact us now to discuss your student's needs.
+            </p>
+
+            <!-- Updated button to call the form modal -->
+            <button onclick="showRegistrationForm()" class="w-full bg-gemini-blue hover:bg-gemini-cyan text-white font-extrabold tracking-wide py-4 rounded-xl transition duration-300 shadow-xl hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-gemini-cyan focus:ring-opacity-50 transform hover:scale-[1.02]">
+                SCHEDULE YOUR FREE CONSULTATION
+            </button>
+            
+            <p class="text-center text-gray-700 font-medium mt-4">
+                Prefer to call? <span class="text-gemini-cyan font-bold">(289) 946-1674</span>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Custom Modal Overlay -->
+<div id="modal-overlay" class="fixed inset-0 bg-black bg-opacity-70 hidden items-center justify-center p-4 z-50 backdrop-blur-sm transition-opacity duration-300">
+    
+    <!-- 1. Registration Form Content (Initially shown) -->
+    <div id="registration-form-content" class="bg-white p-8 rounded-xl shadow-3xl text-center max-w-md w-full transform transition duration-300">
+        <h3 class="text-2xl font-bold text-gemini-blue mb-2">Book Your Free Consult</h3>
+        <p class="text-gray-600 mb-6">Fill out your details and we'll be in touch shortly!</p>
+
+        <form onsubmit="handleFormSubmit(event)">
+            <!-- Name Field -->
+            <div class="mb-4 text-left">
+                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                <input type="text" id="name" name="name" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gemini-cyan focus:border-gemini-cyan transition duration-150 shadow-sm" placeholder="Jane Doe">
+            </div>
+
+            <!-- Email Field -->
+            <div class="mb-4 text-left">
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                <input type="email" id="email" name="email" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gemini-cyan focus:border-gemini-cyan transition duration-150 shadow-sm" placeholder="jane.doe@email.com">
+            </div>
+
+            <!-- Phone Field -->
+            <div class="mb-6 text-left">
+                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number (Optional)</label>
+                <input type="tel" id="phone" name="phone" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gemini-cyan focus:border-gemini-cyan transition duration-150 shadow-sm" placeholder="(555) 555-5555">
+            </div>
+
+            <!-- Submission Button -->
+            <button type="submit" class="w-full bg-gemini-cyan hover:bg-gemini-blue text-white font-semibold py-3 rounded-lg transition duration-200 shadow-lg">
+                Submit Request
+            </button>
+            <p id="form-error" class="text-sm text-gemini-red mt-3 hidden">Please fill in all required fields.</p>
+        </form>
+
+        <!-- Close Button -->
+        <button onclick="closeModal()" class="mt-4 text-sm text-gray-500 hover:text-gray-900 transition duration-200">
+            Cancel
+        </button>
+    </div>
+
+    <!-- 2. Success Message Content (Initially hidden) -->
+    <div id="success-message-content" class="bg-white p-8 rounded-xl shadow-3xl text-center max-w-sm w-full transform transition duration-300 hidden">
+        <div class="text-5xl mb-4 text-green-500">✨</div>
+        <h3 class="text-2xl font-bold text-gemini-blue">Request Sent!</h3>
+        <p class="text-gray-600 mt-2">We've received your details and will contact you via email or phone within 24 hours.</p>
+        <button onclick="closeModal()" class="mt-6 bg-gemini-blue text-white py-2.5 px-6 rounded-lg hover:bg-gemini-cyan transition duration-200 shadow-md">
+            Close
+        </button>
+    </div>
+</div>
+
+<script>
+    const modalOverlay = document.getElementById('modal-overlay');
+    const formContent = document.getElementById('registration-form-content');
+    const successContent = document.getElementById('success-message-content');
+    const formError = document.getElementById('form-error');
+
+    /**
+     * Shows the registration form modal.
+     */
+    function showRegistrationForm() {
+        // Ensure only the form is visible when opening
+        formContent.classList.remove('hidden');
+        successContent.classList.add('hidden');
+        formError.classList.add('hidden');
+        
+        modalOverlay.classList.remove('hidden');
+        modalOverlay.classList.add('flex');
+    }
+
+    /**
+     * Hides the entire modal overlay.
+     */
+    function closeModal() {
+        modalOverlay.classList.add('hidden');
+        modalOverlay.classList.remove('flex');
+    }
+
+    /**
+     * Handles the form submission logic.
+     * @param {Event} event - The form submission event.
+     */
+    async function handleFormSubmit(event) {
+        event.preventDefault(); // Stop the default form submission
+
+        // Hide previous errors
+        formError.classList.add('hidden');
+
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+
+        if (!name || !email) {
+            formError.classList.remove('hidden');
+            return;
+        }
+        
+        // Prepare lead data object
+        const leadData = {
+            name: name,
+            email: email,
+            phone: phone || 'N/A',
+            timestamp: new Date().toISOString()
+        };
+
+        // Disable form button and show loading state
+        const submitButton = event.target.querySelector('button[type="submit"]');
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending...'; 
+
+        // !!! CRITICAL STEP: REPLACE THIS PLACEHOLDER URL !!!
+        // You MUST replace this with the URL you get after deploying your Google Apps Script Web App (see previous response).
+        const REAL_EMAIL_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzdDQOE0rFSUHzQ1Sn2yLXTdRyAp9STpohbNDnnf7EX5ef1OLnYHdIaUYQJCYUQMWjN/exec'; 
+
+        try {
+            // STEP 1: Send data to your Google Apps Script endpoint
+            const response = await fetch(REAL_EMAIL_ENDPOINT, {
+                method: 'POST',
+                // Google Apps Script requires data to be submitted as form data (URL-encoded)
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                // Convert JSON data to URLSearchParams for form submission format
+                body: new URLSearchParams(leadData).toString() 
+            });
+
+            if (!response.ok) {
+                throw new Error(`Server processing error: ${response.status}`);
+            }
+
+            // STEP 2: Show the success message to the user
+            formContent.classList.add('hidden');
+            successContent.classList.remove('hidden');
+
+        } catch (error) {
+            // Handle network errors or server communication failures
+            console.error('Submission Error:', error);
+            
+            // Fallback for real deployment/network failure
+            formError.textContent = 'Failed to submit the request. Please try calling instead or refresh.';
+            formError.classList.remove('hidden');
+
+        } finally {
+            // Re-enable button
+            submitButton.disabled = false;
+            submitButton.textContent = 'Submit Request'; 
+        }
+    }
+</script>
