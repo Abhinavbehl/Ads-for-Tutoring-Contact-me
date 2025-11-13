@@ -34,13 +34,10 @@
 </style>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Ad Container: Centered and responsive -->
 <div class="min-h-screen flex items-center justify-center p-4">
 
-    <!-- The Ad Card -->
     <div id="ad-card" class="bg-white max-w-lg w-full rounded-3xl shadow-2xl overflow-hidden transform transition-all duration-500 hover:shadow-3xl border-t-8 border-gemini-cyan">
         
-        <!-- Header Section: Main Headline -->
         <div class="p-8 text-center bg-gray-50 border-b border-gray-100">
             <h1 class="text-4xl md:text-5xl font-extrabold gradient-text leading-tight">
                 🚀 Stop Stressing About Grades!
@@ -50,14 +47,12 @@
             </p>
         </div>
 
-        <!-- Benefits & Features Section -->
         <div class="p-8 space-y-6">
             <h2 class="text-2xl font-bold text-gemini-blue text-center mb-6">
                 Turn Confusion Into Clarity
             </h2>
             
             <div class="space-y-4">
-                <!-- Benefit 1: Confidence -->
                 <div class="flex items-start p-4 bg-blue-50 rounded-xl shadow-sm hover:shadow-md transition duration-200">
                     <span class="text-2xl mr-4 text-gemini-cyan">✅</span>
                     <div>
@@ -65,7 +60,6 @@
                     </div>
                 </div>
 
-                <!-- Benefit 2: Strategy -->
                 <div class="flex items-start p-4 bg-blue-50 rounded-xl shadow-sm hover:shadow-md transition duration-200">
                     <span class="text-2xl mr-4 text-gemini-cyan">🧠</span>
                     <div>
@@ -73,23 +67,20 @@
                     </div>
                 </div>
 
-                <!-- Benefit 3: Exam Prep -->
                 <div class="flex items-start p-4 bg-blue-50 rounded-xl shadow-sm hover:shadow-md transition duration-200">
                     <span class="text-2xl mr-4 text-gemini-cyan">🏆</span>
                     <div>
-                        <strong class="text-gray-900">Exam Domination:</strong> Get help preparing for eaxms like SAT, ACT etc. to  secure your college spot.
+                        <strong class="text-gray-900">Exam Domination:</strong> Get help preparing for eaxms like SAT, ACT etc. to  secure your college spot.
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Call to Action Footer -->
         <div class="p-8 pt-0">
             <p class="text-sm text-gray-500 mb-4 text-center">
                 Specializing in Grades 9-12. Contact us now to discuss your student's needs.
             </p>
 
-            <!-- Updated button to call the form modal -->
             <button onclick="showRegistrationForm()" class="w-full bg-gemini-blue hover:bg-gemini-cyan text-white font-extrabold tracking-wide py-4 rounded-xl transition duration-300 shadow-xl hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-gemini-cyan focus:ring-opacity-50 transform hover:scale-[1.02]">
                 SCHEDULE YOUR FREE CONSULTATION
             </button>
@@ -97,51 +88,51 @@
             <p class="text-center text-gray-700 font-medium mt-4">
                 Prefer to call? <span class="text-gemini-cyan font-bold">(289) 946-1674</span>
             </p>
-        </div>
+
+            <div class="mt-4 text-center">
+                <img 
+                    src="uploaded:Untitled (2).jpeg-247b2246-e236-47bd-8f19-ddcf7e34fb23" 
+                    alt="QR Code for Quick Access" 
+                    class="mx-auto w-24 h-auto"
+                >
+            </div>
+            </div>
     </div>
 </div>
 
-<!-- Custom Modal Overlay -->
 <div id="modal-overlay" class="fixed inset-0 bg-black bg-opacity-70 hidden items-center justify-center p-4 z-50 backdrop-blur-sm transition-opacity duration-300">
     
-    <!-- 1. Registration Form Content (Initially shown) -->
     <div id="registration-form-content" class="bg-white p-8 rounded-xl shadow-3xl text-center max-w-md w-full transform transition duration-300">
         <h3 class="text-2xl font-bold text-gemini-blue mb-2">Book Your Free Consult</h3>
         <p class="text-gray-600 mb-6">Fill out your details and we'll be in touch shortly!</p>
 
         <form onsubmit="handleFormSubmit(event)">
-            <!-- Name Field -->
             <div class="mb-4 text-left">
                 <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
                 <input type="text" id="name" name="name" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gemini-cyan focus:border-gemini-cyan transition duration-150 shadow-sm" placeholder="Jane Doe">
             </div>
 
-            <!-- Email Field -->
             <div class="mb-4 text-left">
                 <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
                 <input type="email" id="email" name="email" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gemini-cyan focus:border-gemini-cyan transition duration-150 shadow-sm" placeholder="jane.doe@email.com">
             </div>
 
-            <!-- Phone Field -->
             <div class="mb-6 text-left">
                 <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number (Optional)</label>
                 <input type="tel" id="phone" name="phone" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gemini-cyan focus:border-gemini-cyan transition duration-150 shadow-sm" placeholder="(555) 555-5555">
             </div>
 
-            <!-- Submission Button -->
             <button type="submit" class="w-full bg-gemini-cyan hover:bg-gemini-blue text-white font-semibold py-3 rounded-lg transition duration-200 shadow-lg">
                 Submit Request
             </button>
             <p id="form-error" class="text-sm text-gemini-red mt-3 hidden">Please fill in all required fields.</p>
         </form>
 
-        <!-- Close Button -->
         <button onclick="closeModal()" class="mt-4 text-sm text-gray-500 hover:text-gray-900 transition duration-200">
             Cancel
         </button>
     </div>
 
-    <!-- 2. Success Message Content (Initially hidden) -->
     <div id="success-message-content" class="bg-white p-8 rounded-xl shadow-3xl text-center max-w-sm w-full transform transition duration-300 hidden">
         <div class="text-5xl mb-4 text-green-500">✨</div>
         <h3 class="text-2xl font-bold text-gemini-blue">Request Sent!</h3>
